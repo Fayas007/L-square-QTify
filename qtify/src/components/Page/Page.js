@@ -41,7 +41,7 @@ const Page=()=>{
     return <div>
         <Navbar/>
         <Hero/>
-        <Section Albums={TopAlbums}/>
+        <Section Albums={TopAlbums} name="TopAlbums"/>
         
 
     </div>

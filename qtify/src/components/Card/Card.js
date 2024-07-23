@@ -17,7 +17,7 @@ import Chip from '@mui/material/Chip';
       image={cardObj.image}
       
     />
-    <CardContent>
+    <CardContent sx={{backgroundColor:"green"}}>
     <Chip label={cardObj.follows+" follows"} sx={{backgroundColor:"black",color:"white"}}/>
     </CardContent>
     

@@ -1,0 +1,10 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    background-color: black;
+    
+}
+
+.grid_items{
+    margin:10px;
+}

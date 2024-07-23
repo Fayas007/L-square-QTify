@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./Search.module.css";
 import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
 // import useAutocomplete from "@mui/base/useAutocomplete";
+import { useAutocomplete } from '@mui/base';
 import { styled } from "@mui/system";
 // import { truncate } from "../../helpers/helpers";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Tooltip } from "@mui/material";
 
 const Listbox = styled("ul")(({ theme }) => ({
@@ -37,27 +38,27 @@ const Listbox = styled("ul")(({ theme }) => ({
 }));
 
 function Search({ searchData, placeholder }) {
-  // const {
-  //   getRootProps,
-  //   getInputLabelProps,
-  //   value,
-  //   getInputProps,
-  //   getListboxProps,
-  //   getOptionProps,
-  //   groupedOptions,
-  // } = useAutocomplete({
-  //   id: "use-autocomplete-demo",
-  //   options: searchData || [],
-  //   getOptionLabel: (option) => option.title,
-  // });
+  const {
+    getRootProps,
+    getInputLabelProps,
+    value,
+    getInputProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+  } = useAutocomplete({
+    id: "use-autocomplete-demo",
+    options: searchData || [],
+    getOptionLabel: (option) => option.title,
+  });
 
   // const navigate = useNavigate();
-  // const onSubmit = (e, value) => {
-  //   e.preventDefault();
-  //   console.log(value);
-  //   navigate(`/album/${value.slug}`);
-  //   //Process form data, call API, set state etc.
-  // };
+  const onSubmit = (e, value) => {
+    e.preventDefault();
+    console.log(value);
+    // navigate(`/album/${value.slug}`);
+    //Process form data, call API, set state etc.
+  };
 
   return (
     <div style={{ position: "relative" }}>

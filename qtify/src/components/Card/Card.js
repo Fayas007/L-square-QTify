@@ -22,7 +22,7 @@ import Chip from '@mui/material/Chip';
     </CardContent>
     
     </Card>
-    <div>{cardObj.title}</div>
+    <div style={{color:"white"}}>{cardObj.title}</div>
     </div>
   
 }

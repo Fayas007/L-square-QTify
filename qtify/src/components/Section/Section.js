@@ -35,7 +35,7 @@ const Section= ({Albums,name})=>{
 
     else if(Albums.length && !value){return <><div className={styles.header}>
     <h2>{name}</h2>
-    <div onClick={()=>{handleShowall()}}><Button text="Show all"/></div>
+    <div onClick={()=>{handleShowall()}}><Button text="show all"/></div>
   </div><Carousel Albums={Albums}/></>}
       
      return <div>Hi</div>  }

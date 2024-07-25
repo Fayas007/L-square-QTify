@@ -24,32 +24,23 @@ const Section= (props)=>{
 
 
 
-    if(props.Albums.length && value){
+    if(props.Albums.length ){
       return <><div className={styles.header}>
       <h2>{props.name}</h2>
-      <div onClick={()=>{handleCollapse()}}><Button text="Collapse"/></div>
-    </div><div className={styles.grid}>
-        
-      {props.Albums.map(ele =>  {return <div className={styles.grid_items} key={ele.id}><MusicCard obj={ele}/></div>}  )}
-       </div></>
-    }
+      <div onClick={()=>{handleCollapse()}}><Button text={value?"Collapse":"Show all"}/></div></div>
+      {(value)?<div className={styles.grid}>
+        {props.Albums.map(ele =>  {return <div className={styles.grid_items} key={ele.id}><MusicCard obj={ele}/></div>}  )}
+       </div>:<Carousel Albums={props.Albums}/>}
+       </> }
 
-    else if(props.Albums.length && !value){return <><div className={styles.header}>
-    <h2>{props.name}</h2>
-    <div onClick={()=>{handleShowall()}}><Button text="show all"/></div>
-  </div><Carousel Albums={props.Albums}/></>}
-
+    
 
     if(props.songs && props.genres){
       console.log("genres from section ",props.genres)
       return <><div className={styles.header}>
       <h2>{props.name}</h2></div>
-
-      
-
       <TabComponent genres={props.genres} Albums={props.songs}/>
-      
-      </>
+       </>
     }
       
      return <div>Hi</div>  }

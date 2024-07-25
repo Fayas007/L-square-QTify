@@ -23,7 +23,7 @@ const Section= (props)=>{
     if(props.Albums.length ){
       return <><div className={styles.header}>
       <h2>{props.name}</h2>
-      <div onClick={()=>{handleCollapse()}}><Button text={value?"Collapse":"show all"}/></div></div>
+      <div onClick={()=>{handleCollapse()}}><Button text={value?"show all":"Collapse"}/></div></div>
       {(value)?<div className={styles.grid}>
         {props.Albums.map(ele =>  {return <div className={styles.grid_items} key={ele.id}><MusicCard obj={ele}/></div>}  )}
        </div>:<Carousel Albums={props.Albums}/>}

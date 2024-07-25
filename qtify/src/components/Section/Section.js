@@ -12,17 +12,13 @@ const Section= (props)=>{
     // console.log(props.Albums)
 
     const [value,setValue]=useState(true)
+
     const handleCollapse=()=>{
       // console.log("collapse clicked");
-      setValue(false);
+      setValue(!value);
     }
 
-    const handleShowall=()=>{
-      // console.log("Showall clicked");
-      setValue(true);
-    }
-
-
+  
 
     if(props.Albums.length ){
       return <><div className={styles.header}>

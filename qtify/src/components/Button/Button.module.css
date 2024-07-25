@@ -1,16 +1,14 @@
 .button{
-    background-color: black;
+   background-color: black;
     height:50px;
     border-radius: 10px;
     margin: 20px;
     align-content: center;
     vertical-align: middle;
     cursor: pointer;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:"Poppins",sans-serif;
+    color: green;
 }
 
-.text{
-    color: rgb(33, 168, 33)
-    
-    
-}
+
+

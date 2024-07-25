@@ -10,10 +10,14 @@ import { useState } from "react";
 
 
 
+
 const Page=()=>{
 
     const [TopAlbums,setTopAlbums]=useState([]);
     const [NewAlbums,setNewAlbums]=useState([]);
+    const [Songs,SetSongs]=useState([]);
+    const [genres,setGenres]=useState([]);
+    
 
     const topAlbums=async()=>{
 
@@ -21,7 +25,7 @@ const Page=()=>{
         
         try{
             let response=await axios.get(url);
-            console.log(response.data);
+            
             setTopAlbums(response.data);
             return response.data;
         }catch(error){
@@ -37,7 +41,7 @@ const Page=()=>{
         
         try{
             let response=await axios.get(url);
-            console.log(response.data);
+            
             setNewAlbums(response.data);
             return response.data;
         }catch(error){
@@ -46,10 +50,50 @@ const Page=()=>{
         }
     }
 
+    const allSongs=async()=>{
+
+        let url="https://qtify-backend-labs.crio.do/songs"
+        
+        try{
+            let response=await axios.get(url);
+           
+            SetSongs(response.data);
+            return response.data;
+        }catch(error){
+            console.log(error,"custom error");
+            return [];
+        }
+    }
+
+    
+
+    const allGenre=async()=>{
+
+        let url="https://qtify-backend-labs.crio.do/genres"
+        
+        try{
+            let response=await axios.get(url);
+            // console.log("from genre function",response.data)
+            setGenres(response.data.data);
+            return response.data.data;
+        }catch(error){
+            console.log(error,"custom error");
+            return [];
+        }
+    }
+
+    
+
+
+    
+
+
     useEffect(()=>{
         
         topAlbums();
         newAlbums();
+        allSongs();
+        allGenre();
          
     },[])
 
@@ -62,7 +106,7 @@ const Page=()=>{
         <Hero/>
         <Section Albums={TopAlbums} name="TopAlbums"/>
         <Section Albums={NewAlbums} name="NewAlbums"/>
-        
+        <Section Albums songs={Songs} name="Songs" genres={genres}/>
 
     </div>
 }

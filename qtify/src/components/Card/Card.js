@@ -14,8 +14,7 @@ import Chip from '@mui/material/Chip';
     return <div> <Card sx={{borderRadius:5}}>
     <CardMedia
       sx={{ height: 200}}
-      image={cardObj.image}
-      
+      image={cardObj.image}  
     />
     <CardContent sx={{backgroundColor:"green"}}>
     {(cardObj.follows)?<Chip label={cardObj.follows+" follows"} sx={{backgroundColor:"black",color:"white"}}/>:<Chip label={cardObj.likes+" likes"} sx={{backgroundColor:"black",color:"white"}}/>}

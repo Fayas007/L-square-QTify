@@ -3,10 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Section from "../Section/Section";
 import Hero from "../Hero/Hero";
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
-
-
+import { useEffect,useState } from "react";
 
 
 
@@ -25,7 +22,6 @@ const Page=()=>{
         
         try{
             let response=await axios.get(url);
-            
             setTopAlbums(response.data);
             return response.data;
         }catch(error){

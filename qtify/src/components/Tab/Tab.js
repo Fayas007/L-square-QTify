@@ -14,7 +14,7 @@ const TabComponent=({genres,Albums})=>{
 
     const [songs,setSongs]=useState(Albums)
     const [value,setValue]=useState(0);
-    const [firstLoad,setFirstLoad]=useState(true)
+    // const [firstLoad,setFirstLoad]=useState(true)
 
 
 
@@ -27,25 +27,19 @@ const TabComponent=({genres,Albums})=>{
         let selectedGenre=genres[tabNumber-1].key
         let songList=Albums.filter((ele)=>ele.genre.key==selectedGenre);
         setSongs(songList);
-      }
-
-      
+      } 
       
     }
     
     
 
     const handleChange=(event,value)=>{
-        setFirstLoad(false);
+        // setFirstLoad(false);
         setValue(value);
         search(value);
-
-
     }
 
 
-
-    // console.log("genres from tab componet outside if",genres)
 
     return (
         
@@ -56,7 +50,7 @@ const TabComponent=({genres,Albums})=>{
             ))}
           </Tabs>
           <Carousel Albums={songs}/>
-          { firstLoad && <Carousel Albums={Albums}/>}
+          {/* { firstLoad && <Carousel Albums={Albums}/>} */}
           </>
           
       );

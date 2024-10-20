@@ -12,7 +12,7 @@ import MusicCard from "../Card/Card";
 
 const Carousel = ({Albums}) => {
 
-  console.log("carousel called",Albums)
+  
   return (
     <Swiper
      style={{backgroundColor:"black"}} 

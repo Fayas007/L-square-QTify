@@ -9,12 +9,10 @@ import TabComponent from "../Tab/Tab";
 
 
 const Section= (props)=>{
-    // console.log(props.Albums)
 
     const [value,setValue]=useState(true)
 
     const handleCollapse=()=>{
-      // console.log("collapse clicked");
       setValue(!value);
     }
 
@@ -32,14 +30,13 @@ const Section= (props)=>{
     
 
     if(props.songs && props.genres){
-      console.log("genres from section ",props.genres)
       return <><div className={styles.header}>
       <h2>{props.name}</h2></div>
       <TabComponent genres={props.genres} Albums={props.songs}/>
        </>
     }
       
-     return <div>Hi</div>  }
+  }
 
      
   

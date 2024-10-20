@@ -41,7 +41,7 @@ const TabComponent=({genres,Albums})=>{
 
     useEffect(()=>{
       setSongs(Albums);
-    })
+    },[])
 
 
 

@@ -39,6 +39,10 @@ const TabComponent=({genres,Albums})=>{
         search(value);
     }
 
+    useEffect(()=>{
+      setSongs(Albums);
+    })
+
 
 
     return (

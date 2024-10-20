@@ -14,7 +14,7 @@ const TabComponent=({genres,Albums})=>{
 
     const [songs,setSongs]=useState(Albums)
     const [value,setValue]=useState(0);
-    // const [firstLoad,setFirstLoad]=useState(true)
+    const [firstLoad,setFirstLoad]=useState(true)
 
 
 
@@ -34,14 +34,10 @@ const TabComponent=({genres,Albums})=>{
     
 
     const handleChange=(event,value)=>{
-        // setFirstLoad(false);
+        setFirstLoad(false);
         setValue(value);
         search(value);
     }
-
-    useEffect(()=>{
-      setSongs(Albums);
-    },[])
 
 
 
@@ -54,7 +50,7 @@ const TabComponent=({genres,Albums})=>{
             ))}
           </Tabs>
           <Carousel Albums={songs}/>
-          {/* { firstLoad && <Carousel Albums={Albums}/>} */}
+          { firstLoad && <Carousel Albums={Albums}/>}
           </>
           
       );
